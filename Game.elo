@@ -1,0 +1,24 @@
+module("game.hpp");
+
+int main() {
+    int answer = generateRandomNumber(1, 100);
+    int guess;
+    bool correct = false;
+
+    PRINT "숫자를 맞춰보세요 (1에서 100 사이):";
+    
+    while (!correct) {
+        INPUT guess;
+
+        if (guess < answer) {
+            PRINT "숫자가 작습니다.";
+        } else if (guess > answer) {
+            PRINT "숫자가 큽니다.";
+        } else {
+            PRINT "정답입니다!";
+            correct = true;
+        }
+    }
+
+    return 0;
+}
